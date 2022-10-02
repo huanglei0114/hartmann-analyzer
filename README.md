@@ -1,10 +1,18 @@
 # hartmann-analyzer
 Hartmann analyzer
 
-This is a demonstration code for the analysis of the Hartmanngram simulated as the Example_21 by using SRW.
-The Hartmanngram data `ex21_res_int_re_se.dat` is pre-saved in folder `/data_example_21/`.
-The ipython notebook `process_se_hartmanngram.ipynb` can be used as the demo script.
-Some packages are needed to run this demonstration.
+## introduction
+This is a demon code for the image analysis of the Hartmanngram simulated as Example21 by using SRW.
+https://github.com/ochubar/SRW/blob/master/env/work/srw_python/SRWLIB_Example21.py
+
+## data
+The simulated Hartmanngram data `ex21_res_int_re_se.dat` is pre-saved in folder `/data_example_21/`.
+
+## demonstration codes and ipython notebook
+The ipython notebook `process_se_hartmanngram.ipynb` can be used as the main script for a demonstration purpose.
+
+## the used packages
+Some packages are needed to run this demonstration:
 - numpy
 - scipy
 - matplotlib
