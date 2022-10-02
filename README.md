@@ -1,6 +1,6 @@
 # Hartmann-analyzer
 
-This is a demon code for the image analysis of the Hartmanngram simulated as Example21 by using SRW.
+This is a demo code for the image analysis of the Hartmanngram simulated as Example21 by using SRW.
 https://github.com/ochubar/SRW/blob/master/env/work/srw_python/SRWLIB_Example21.py
 
 
