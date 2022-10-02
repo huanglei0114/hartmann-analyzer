@@ -24,9 +24,8 @@
 # SOFTWARE.
 
 import numpy as np
-import scipy.fftpack as fftpack
 from scipy import ndimage, sparse
-from scipy import integrate
+from scipy.sparse.linalg import lsqr
 
 def remove_2d_tilt(x2d: np.ndarray,
                    y2d: np.ndarray,
@@ -202,7 +201,7 @@ def calculate_2d_height_from_slope(sx2d: np.ndarray,
          matrix_gy5[np.isfinite(matrix_gy5)])).T
     del(matrix_gx5, matrix_gy5)
 
-    z2d = sparse.linalg.lsqr(matrix_d, matrix_g)[0]
+    z2d = lsqr(matrix_d, matrix_g)[0]
     del(matrix_d, matrix_g)
 
     # Reconstructed result
