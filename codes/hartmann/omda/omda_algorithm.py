@@ -24,7 +24,9 @@
 # SOFTWARE.
 
 import numpy as np
+import scipy.fftpack as fftpack
 from scipy import ndimage, sparse
+from scipy import integrate
 
 def remove_2d_tilt(x2d: np.ndarray,
                    y2d: np.ndarray,
