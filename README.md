@@ -9,7 +9,7 @@ The simulated Hartmanngram data `ex21_res_int_re_se.dat` is pre-saved in the fol
 
 
 ## Demonstration codes and ipython notebook
-The ipython notebook `process_se_hartmanngram.ipynb` can be used as the main script for a demonstration purpose.
+The ipython notebook `process_data_example_21.ipynb` can be used as the main script for a demonstration purpose.
 
 
 ## The used packages
