@@ -161,7 +161,7 @@ def calculate_2d_height_from_slope(sx2d: np.ndarray,
     vse = np.array([[1, 1, 0, 1, 0]]).T
     dilated_expand_mask_y = ndimage.binary_dilation(
         expand_mask_y, structure=vse)
-    maks_y = dilated_expand_mask_y[1:-2, :] & ~expand_mask_y[1:2, :]
+    mask_y = dilated_expand_mask_y[1:-2, :] & ~expand_mask_y[1:-2, :]
 
     # Compose matrices matrix_dx and matrix_dy
     num = nrows*ncols
@@ -185,7 +185,7 @@ def calculate_2d_height_from_slope(sx2d: np.ndarray,
 
     # Use O(h^3) values, if O(h^5) is not available
     matrix_gx5[mask_x] = matrix_gx3[mask_x]
-    matrix_gy5[maks_y] = matrix_gy3[maks_y]
+    matrix_gy5[mask_y] = matrix_gy3[mask_y]
 
     del(sx2d_ex, sy2d_ex, x2d_ex, y2d, matrix_gx3, matrix_gy3)
 
@@ -201,7 +201,7 @@ def calculate_2d_height_from_slope(sx2d: np.ndarray,
          matrix_gy5[np.isfinite(matrix_gy5)])).T
     del(matrix_gx5, matrix_gy5)
 
-    z2d = lsqr(matrix_d, matrix_g)[0]
+    z2d = lsqr(matrix_d, matrix_g, damp=0.0, atol=1e-16, btol=1e-16, conlim=100000000.0, iter_lim=None, show=False, calc_var=False, x0=None)[0] 
     del(matrix_d, matrix_g)
 
     # Reconstructed result
