@@ -1,7 +1,7 @@
 # Hartmann-analyzer
 
 This is a demo code for the image analysis of the Hartmanngram simulated as Example21 by using SRW.
-https://github.com/ochubar/SRW/blob/master/env/work/srw_python/SRWLIB_Example21.py
+https://github.com/ochubar/SRW/blob/master/env/python/srwpy/examples/SRWLIB_Example21.py
 
 
 ## Data
